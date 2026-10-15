@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Energy Orb — AR Experience</title>
+
+  <!-- A-Frame -->
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+
+  <!-- AR.js -->
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #08051a;
+    }
+
+    /* Camera: mirrored and less cropped */
+    #arjs-video {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: contain !important;
+      transform: scaleX(-1) !important;
+      transform-origin: center center;
+    }
+
+    /* Mirror the AR view too, keeping the marker and orb aligned */
+    .a-canvas {
+      transform: scaleX(-1);
+      transform-origin: center center;
+    }
+  </style>
+</head>
+
+<body>
+  <a-scene
+    embedded
+    vr-mode-ui="enabled: false"
+    renderer="antialias: true; colorManagement: true"
+    arjs="sourceType: webcam; debugUIEnabled: false;">
+
+    <a-assets>
+      <!-- No external 3D models required -->
+    </a-assets>
+
+    <a-marker preset="hiro">
+
+      <!-- ENERGY CORE -->
+      <a-entity position="0 0.9 0">
+
+        <!-- Outer energy glow -->
+        <a-sphere
+          radius="0.48"
+          material="
+            color: #5b00ff;
+            emissive: #7c00ff;
+            emissiveIntensity: 2;
+            transparent: true;
+            opacity: 0.22;
+            roughness: 0.15;
+            metalness: 0.1;
+          "
+          animation="
+            property: scale;
+            from: 0.92 0.92 0.92;
+            to: 1.12 1.12 1.12;
+            dir: alternate;
+            dur: 1300;
+            loop: true;
+            easing: easeInOutSine;
+          ">
+        </a-sphere>
+
+        <!-- Main luminous orb -->
+        <a-sphere
+          radius="0.34"
+          material="
+            color: #bd38ff;
+            emissive: #9c00ff;
+            emissiveIntensity: 2.5;
+            roughness: 0.2;
+            metalness: 0.15;
+          "
+          animation="
+            property: rotation;
+            to: 0 360 0;
+            dur: 7000;
+            loop: true;
+            easing: linear;
+          ">
+        </a-sphere>
+
+        <!-- Bright inner nucleus -->
+        <a-sphere
+          radius="0.19"
+          material="
+            color: #ffffff;
+            emissive: #ff45f6;
+            emissiveIntensity: 3;
+            transparent: true;
+            opacity: 0.9;
+          "
+          animation="
+            property: scale;
+            from: 0.85 0.85 0.85;
+            to: 1.15 1.15 1.15;
+            dir: alternate;
+            dur: 700;
+            loop: true;
+            easing: easeInOutSine;
+          ">
+        </a-sphere>
+
+        <!-- Orbit rings -->
+        <a-torus
+          radius="0.48"
+          radius-tubular="0.008"
+          material="
+            color: #ff35ef;
+            emissive: #ff00e6;
+            emissiveIntensity: 2.5;
+          "
+          rotation="65 0 20"
+          animation="
+            property: rotation;
+            to: 65 360 380;
+            dur: 5000;
+            loop: true;
+            easing: linear;
+          ">
+        </a-torus>
+
+        <a-torus
+          radius="0.43"
+          radius-tubular="0.006"
+          material="
+            color: #00f5ff;
+            emissive: #00cfff;
+            emissiveIntensity: 2.5;
+          "
+          rotation="110 30 0"
+          animation="
+            property: rotation;
+            to: 470 30 360;
+            dur: 6500;
+            loop: true;
+            easing: linear;
+          ">
+        </a-torus>
+
+        <a-torus
+          radius="0.53"
+          radius-tubular="0.004"
+          material="
+            color: #a45bff;
+            emissive: #8b00ff;
+            emissiveIntensity: 2;
+          "
+          rotation="25 80 40"
+          animation="
+            property: rotation;
+            to: 385 440 400;
+            dur: 8500;
+            loop: true;
+            easing: linear;
+          ">
+        </a-torus>
+
+        <!-- Energy particles -->
+        <a-sphere
+          position="0.39 0.18 0.05"
+          radius="0.025"
+          material="color: #00ffff; emissive: #00ffff; emissiveIntensity: 3"
+          animation="property: position; to: -0.12 0.42 0.05; dur: 1100; dir: alternate; loop: true">
+        </a-sphere>
+
+        <a-sphere
+          position="-0.35 -0.2 0.12"
+          radius="0.018"
+          material="color: #ff40f5; emissive: #ff00ea; emissiveIntensity: 3"
+          animation="property: position; to: 0.25 -0.32 0.12; dur: 1400; dir: alternate; loop: true">
+        </a-sphere>
+
+        <a-sphere
+          position="0.05 0.48 0.1"
+          radius="0.02"
+          material="color: #ffffff; emissive: #ffffff; emissiveIntensity: 3"
+          animation="property: position; to: -0.2 0.28 0.1; dur: 900; dir: alternate; loop: true">
+        </a-sphere>
+
+        <a-sphere
+          position="-0.45 0.05 -0.08"
+          radius="0.016"
+          material="color: #9b5dff; emissive: #9b5dff; emissiveIntensity: 3"
+          animation="property: position; to: 0.25 0.12 -0.08; dur: 1700; dir: alternate; loop: true">
+        </a-sphere>
+
+        <a-sphere
+          position="0.2 -0.4 0.08"
+          radius="0.022"
+          material="color: #00ffff; emissive: #00ffff; emissiveIntensity: 3"
+          animation="property: position; to: -0.25 -0.1 0.08; dur: 1200; dir: alternate; loop: true">
+        </a-sphere>
+
+        <a-sphere
+          position="-0.12 0.02 0.38"
+          radius="0.014"
+          material="color: #ffffff; emissive: #ff40f5; emissiveIntensity: 3"
+          animation="property: position; to: 0.12 0.3 0.38; dur: 1000; dir: alternate; loop: true">
+        </a-sphere>
+
+        <a-sphere
+          position="0.32 -0.1 -0.2"
+          radius="0.018"
+          material="color: #ff35ef; emissive: #ff35ef; emissiveIntensity: 3"
+          animation="property: position; to: -0.2 -0.35 -0.2; dur: 1600; dir: alternate; loop: true">
+        </a-sphere>
+
+        <a-sphere
+          position="-0.18 0.37 -0.12"
+          radius="0.015"
+          material="color: #00ffff; emissive: #00ffff; emissiveIntensity: 3"
+          animation="property: position; to: 0.32 0.2 -0.12; dur: 1300; dir: alternate; loop: true">
+        </a-sphere>
+
+        <!-- Floating energy sparks -->
+        <a-sphere
+          position="0.55 0.28 0"
+          radius="0.012"
+          material="color: #ffffff; emissive: #00ffff; emissiveIntensity: 4">
+        </a-sphere>
+
+        <a-sphere
+          position="-0.52 -0.25 0.05"
+          radius="0.014"
+          material="color: #ff00ee; emissive: #ff00ee; emissiveIntensity: 4">
+        </a-sphere>
+
+        <a-sphere
+          position="0.05 -0.53 -0.05"
+          radius="0.01"
+          material="color: #ffffff; emissive: #ffffff; emissiveIntensity: 4">
+        </a-sphere>
+
+        <a-sphere
+          position="-0.1 0.55 0"
+          radius="0.012"
+          material="color: #00ffff; emissive: #00ffff; emissiveIntensity: 4">
+        </a-sphere>
+
+        <!-- Point lights -->
+        <a-entity
+          light="type: point; color: #b000ff; intensity: 1.8; distance: 3">
+        </a-entity>
+
+        <a-entity
+          light="type: point; color: #00ffff; intensity: 1.2; distance: 2"
+          position="0.3 0.2 0.2">
+        </a-entity>
+
+      </a-entity>
+
+    </a-marker>
+
+    <a-entity camera></a-entity>
+
+  </a-scene>
+</body>
+</html>
