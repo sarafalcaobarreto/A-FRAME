@@ -4,11 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Objetos baseados na localização GPS</title>
+  <title>Realidade Aumentada GPS - EsACT Mirandela</title>
 
   <style>
-    body {
+    html, body {
       margin: 0;
+      width: 100%;
+      height: 100%;
       overflow: hidden;
     }
   </style>
@@ -23,71 +25,72 @@
     renderer="antialias: true; alpha: true"
     arjs="sourceType: webcam; videoTexture: false; debugUIEnabled: false;">
 
+    <!-- Câmara com localização GPS real -->
     <a-camera
-      gps-camera="simulateLatitude: 51.049; simulateLongitude: -0.723; gpsMinDistance: 5; positionMinAccuracy: 50"
+      gps-camera="gpsMinDistance: 5; positionMinAccuracy: 100"
       rotation-reader>
     </a-camera>
 
-    <!-- ENTIDADE 1: texto vermelho -->
+    <!-- TEXTO VERMELHO -->
     <a-text
       value="Ola Mundo!"
-      scale="6 6 6"
+      scale="8 8 8"
       align="center"
       color="#ff0000"
-      gps-entity-place="latitude: 51.0491; longitude: -0.723;">
+      gps-entity-place="latitude: 41.47819; longitude: -7.17817;">
     </a-text>
 
-    <!-- ENTIDADE 2: texto verde -->
+    <!-- TEXTO VERDE -->
     <a-text
-      value="Sul"
+      value="EsACT - IPB"
       scale="6 6 6"
       align="center"
-      color="#00aa00"
-      gps-entity-place="latitude: 51.0489; longitude: -0.723;">
+      color="#00ff00"
+      gps-entity-place="latitude: 41.47822; longitude: -7.17817;">
     </a-text>
 
-    <!-- ENTIDADE 3: cubo azul -->
+    <!-- CUBO AZUL -->
     <a-box
       color="#2196f3"
-      scale="3 3 3"
+      scale="2 2 2"
       position="0 2 0"
-      gps-entity-place="latitude: 51.049; longitude: -0.7229;">
+      gps-entity-place="latitude: 41.47819; longitude: -7.17812;">
     </a-box>
 
-    <!-- ENTIDADE 4: esfera laranja -->
+    <!-- ESFERA LARANJA -->
     <a-sphere
       color="#ff9800"
-      radius="2"
-      position="0 4 0"
-      gps-entity-place="latitude: 51.049; longitude: -0.7231;">
+      radius="1.2"
+      position="0 2 0"
+      gps-entity-place="latitude: 41.47819; longitude: -7.17822;">
     </a-sphere>
 
-    <!-- ENTIDADE 5: cone roxo -->
+    <!-- CONE ROXO -->
     <a-cone
       color="#9c27b0"
-      radius-bottom="1.5"
+      radius-bottom="1"
       radius-top="0"
-      height="4"
-      position="0 2 0"
-      gps-entity-place="latitude: 51.0491; longitude: -0.7229;">
+      height="2.5"
+      position="0 1.5 0"
+      gps-entity-place="latitude: 41.47814; longitude: -7.17817;">
     </a-cone>
 
-    <!-- ENTIDADE 6: cilindro amarelo -->
+    <!-- CILINDRO AMARELO -->
     <a-cylinder
       color="#ffeb3b"
-      radius="1"
-      height="3"
-      position="0 2 0"
-      gps-entity-place="latitude: 51.0492; longitude: -0.7232;">
+      radius="0.8"
+      height="2"
+      position="0 1 0"
+      gps-entity-place="latitude: 41.47824; longitude: -7.17812;">
     </a-cylinder>
 
-    <!-- ENTIDADE 7: torus rosa -->
+    <!-- ANEL ROSA -->
     <a-torus
       color="#ff00cc"
-      radius="1.5"
-      radius-tubular="0.15"
-      position="0 3 0"
-      gps-entity-place="latitude: 51.0488; longitude: -0.7231;">
+      radius="1"
+      radius-tubular="0.12"
+      position="0 2 0"
+      gps-entity-place="latitude: 41.47824; longitude: -7.17822;">
     </a-torus>
 
   </a-scene>
