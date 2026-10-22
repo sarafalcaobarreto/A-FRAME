@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Realidade Aumentada GPS</title>
+  <title>Objetos baseados na localização GPS</title>
 
   <style>
     body {
@@ -24,29 +24,29 @@
     arjs="sourceType: webcam; videoTexture: false; debugUIEnabled: false;">
 
     <a-camera
-      gps-camera="gpsMinDistance: 5"
+      gps-camera="simulateLatitude: 51.049; simulateLongitude: -0.723; gpsMinDistance: 5; positionMinAccuracy: 50"
       rotation-reader>
     </a-camera>
 
-    <!-- Texto 1 -->
+    <!-- ENTIDADE 1: texto vermelho -->
     <a-text
       value="Ola Mundo!"
-      scale="8 8 8"
+      scale="6 6 6"
       align="center"
-      color="#ff3333"
+      color="#ff0000"
       gps-entity-place="latitude: 51.0491; longitude: -0.723;">
     </a-text>
 
-    <!-- Texto 2 -->
+    <!-- ENTIDADE 2: texto verde -->
     <a-text
-      value="Realidade Aumentada"
-      scale="5 5 5"
+      value="Sul"
+      scale="6 6 6"
       align="center"
-      color="#00cc88"
+      color="#00aa00"
       gps-entity-place="latitude: 51.0489; longitude: -0.723;">
     </a-text>
 
-    <!-- Cubo azul -->
+    <!-- ENTIDADE 3: cubo azul -->
     <a-box
       color="#2196f3"
       scale="3 3 3"
@@ -54,7 +54,7 @@
       gps-entity-place="latitude: 51.049; longitude: -0.7229;">
     </a-box>
 
-    <!-- Esfera laranja -->
+    <!-- ENTIDADE 4: esfera laranja -->
     <a-sphere
       color="#ff9800"
       radius="2"
@@ -62,7 +62,7 @@
       gps-entity-place="latitude: 51.049; longitude: -0.7231;">
     </a-sphere>
 
-    <!-- Cone roxo -->
+    <!-- ENTIDADE 5: cone roxo -->
     <a-cone
       color="#9c27b0"
       radius-bottom="1.5"
@@ -72,7 +72,7 @@
       gps-entity-place="latitude: 51.0491; longitude: -0.7229;">
     </a-cone>
 
-    <!-- Cilindro amarelo -->
+    <!-- ENTIDADE 6: cilindro amarelo -->
     <a-cylinder
       color="#ffeb3b"
       radius="1"
@@ -81,7 +81,15 @@
       gps-entity-place="latitude: 51.0492; longitude: -0.7232;">
     </a-cylinder>
 
+    <!-- ENTIDADE 7: torus rosa -->
+    <a-torus
+      color="#ff00cc"
+      radius="1.5"
+      radius-tubular="0.15"
+      position="0 3 0"
+      gps-entity-place="latitude: 51.0488; longitude: -0.7231;">
+    </a-torus>
+
   </a-scene>
 </body>
 </html>
-
