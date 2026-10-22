@@ -1,1 +1,87 @@
 
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Realidade Aumentada GPS</title>
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
+
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@ar-js-org/ar.js@3.4.8/aframe/build/aframe-ar.js"></script>
+</head>
+
+<body>
+  <a-scene
+    vr-mode-ui="enabled: false"
+    renderer="antialias: true; alpha: true"
+    arjs="sourceType: webcam; videoTexture: false; debugUIEnabled: false;">
+
+    <a-camera
+      gps-camera="gpsMinDistance: 5"
+      rotation-reader>
+    </a-camera>
+
+    <!-- Texto 1 -->
+    <a-text
+      value="Ola Mundo!"
+      scale="8 8 8"
+      align="center"
+      color="#ff3333"
+      gps-entity-place="latitude: 51.0491; longitude: -0.723;">
+    </a-text>
+
+    <!-- Texto 2 -->
+    <a-text
+      value="Realidade Aumentada"
+      scale="5 5 5"
+      align="center"
+      color="#00cc88"
+      gps-entity-place="latitude: 51.0489; longitude: -0.723;">
+    </a-text>
+
+    <!-- Cubo azul -->
+    <a-box
+      color="#2196f3"
+      scale="3 3 3"
+      position="0 2 0"
+      gps-entity-place="latitude: 51.049; longitude: -0.7229;">
+    </a-box>
+
+    <!-- Esfera laranja -->
+    <a-sphere
+      color="#ff9800"
+      radius="2"
+      position="0 4 0"
+      gps-entity-place="latitude: 51.049; longitude: -0.7231;">
+    </a-sphere>
+
+    <!-- Cone roxo -->
+    <a-cone
+      color="#9c27b0"
+      radius-bottom="1.5"
+      radius-top="0"
+      height="4"
+      position="0 2 0"
+      gps-entity-place="latitude: 51.0491; longitude: -0.7229;">
+    </a-cone>
+
+    <!-- Cilindro amarelo -->
+    <a-cylinder
+      color="#ffeb3b"
+      radius="1"
+      height="3"
+      position="0 2 0"
+      gps-entity-place="latitude: 51.0492; longitude: -0.7232;">
+    </a-cylinder>
+
+  </a-scene>
+</body>
+</html>
+
