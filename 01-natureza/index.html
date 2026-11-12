@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experiência 01 — Natureza e Ambientes</title>
+
+  <!-- A-Frame -->
+  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+
+  <!-- Componente Environment do A-Frame Registry -->
+  <script src="https://unpkg.com/aframe-environment-component@^1.0.x/dist/aframe-environment-component.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <!-- AMBIENTE NATURAL -->
+    <a-entity
+      environment="
+        preset: forest;
+        ground: hills;
+        dressing: trees;
+        dressingAmount: 30;
+        skyType: atmosphere;
+        lighting: distant;
+      ">
+    </a-entity>
+
+    <!-- TÍTULO DA EXPERIÊNCIA -->
+    <a-text
+      value="01 — NATUREZA E AMBIENTES"
+      position="-2 3 -4"
+      color="#FFFFFF"
+      width="6"
+      align="center">
+    </a-text>
+
+    <!-- CÂMARA -->
+    <a-entity position="0 1.6 0">
+      <a-camera look-controls wasd-controls></a-camera>
+    </a-entity>
+  </a-scene>
+</body>
+</html>
