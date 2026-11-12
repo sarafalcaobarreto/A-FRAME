@@ -6,13 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Experiência 01 — Natureza e Ambientes</title>
 
+  <!-- A-FRAME -->
   <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+
+  <!-- COMPONENTE: ENVIRONMENT -->
   <script src="https://unpkg.com/aframe-environment-component@1.5.x/dist/aframe-environment-component.min.js"></script>
+
+  <!-- COMPONENTE: MOUNTAIN -->
+  <script src="https://unpkg.com/aframe-mountain-component@0.3.3/dist/aframe-mountain-component.min.js"></script>
 </head>
 
 <body>
   <a-scene>
-    
+
     <!-- COMPONENTE: ENVIRONMENT -->
     <a-entity
       environment="
@@ -25,6 +31,13 @@
         shadow: true;
       ">
     </a-entity>
+
+    <!-- COMPONENTE: MOUNTAIN -->
+    <a-mountain
+      color="#536B42"
+      position="0 0 -35"
+      scale="3 3 3">
+    </a-mountain>
 
     <!-- IDENTIFICAÇÃO DA EXPERIÊNCIA -->
     <a-entity position="0 3 -5">
